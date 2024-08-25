@@ -1,8 +1,9 @@
 import React from 'react'
 import Couple from './resources/coupletower.jpg'
 import './ContactUs.css'
-import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa';
+import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube, FaEnvelope } from 'react-icons/fa';
 import { MDBInput, MDBValidation, MDBValidationItem, MDBTextArea } from 'mdb-react-ui-kit';
+import Profile from '../components/resources/shivasri/instagram-profile.jpg';
 
 const ContactUs = () => {
   return (
@@ -31,9 +32,11 @@ const ContactUs = () => {
       <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
         <FaYoutube size={30} />
       </a>
+      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <FaEnvelope size={30} />
+      </a>
       </div>
-      {/* <img src={Logo} className= 'logo' style={{ height: '20rem', width: '20rem', padding: '2px' }} alt='Profile'/> */}
-    </div>
+      <div className='logo'><iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Mohammadabad,%20Telangana+(Photosri22Studios)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/">gps devices</a></iframe></div>    </div>
     
       <div className='contact-container contact-form'>
       <MDBValidation noValidate id='contact-form' className='text-center'>

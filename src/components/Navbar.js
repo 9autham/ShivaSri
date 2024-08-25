@@ -47,10 +47,10 @@ function Navbar1() {
 			<nav ref={navRef}>
 				<a href="/home">Home</a>
 				<a href="/about">About</a>
-				<a href="/contact">Services</a>
-				<a href="/#">About Us</a>
-        <a href="/#">About Us</a>
-        <a href="/#">About Us</a>
+				<a href="/portfolio">Portfolio</a>
+				<a href="/services">Services</a>
+        <a href="/contact">Contact Us</a>
+        <a href="/gallery">Gallery</a>
 				<button
 					className="nav-btn nav-close-btn"
 					onClick={showNavbar}>
