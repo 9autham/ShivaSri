@@ -1,0 +1,121 @@
+/* ContactCSS.css */
+.image-container {
+    position: relative;
+  }
+  
+  .image-class {
+    width: 100%;
+    max-width: 100vw;
+    height: 50vh;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    z-index: 1; /* Lower z-index to ensure navbar appears on top */
+  }
+  
+  .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2rem;
+    z-index: 2; /* Higher z-index to ensure text is on top of the image */
+  }
+
+
+  .contact-container {
+    width: 50%; /* Takes up half the screen */
+    max-width: 600px; /* Max width to prevent it from being too large on wider screens */
+    margin: 0 auto; /* Centers the form */
+    padding: 20px;
+    background-color: #fff; /* White background for contrast */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds shadow for depth */
+  }
+  
+  .contact-container h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #333; /* Darker color for the heading */
+  }
+  
+  .contact-input {
+    margin-bottom: 15px; /* Space between inputs */
+  }
+  
+  .contact-btn {
+    width: 100%; /* Full width button */
+    padding: 10px;
+    background-color: #007bff; /* Primary color */
+    border: none;
+    border-radius: 5px; /* Rounded button corners */
+    color: #fff;
+    font-size: 1.2rem;
+  }
+  
+  .contact-btn:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+
+  /* Small Screen Full Screen else Flex */
+
+  .container-social-contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .contact-form,
+  .social-media {
+    flex: 1 1 48%; /* Each div takes up 48% of the width on large screens */
+    max-width: 48%;
+    box-sizing: border-box; /* Include padding and border in the width */
+    padding: 1rem; /* Add some padding */
+  }
+  
+  @media (max-width: 768px) { /* Adjust breakpoint as needed */
+    .contact-form,
+    .social-media {
+      flex: 1 1 100%; /* Each div takes 100% of the width on small screens */
+      max-width: 100%;
+      padding: 0.5rem; /* Adjust padding for smaller screens */
+    }
+  }
+
+
+  /* Social Media Design */
+  .social-media {
+    /* display: flex; */
+    justify-content: center;
+    gap: 1rem; /* Space between icons */
+    padding: 1rem;
+    background-color: #f1f1f1; /* Light background color */
+    border-radius: 8px; /* Rounded corners */
+  }
+  
+  .social-media a {
+    text-decoration: none;
+    color: #333; /* Dark color for icons */
+  }
+  
+  .social-media a:hover {
+    color: #007bff; /* Change color on hover */
+  }
+  
+  .social-media i {
+    font-size: 2rem; /* Size of the icons */
+  }
+  
+  .icons {
+    display: flex;
+    gap: 1rem; /* Space between icons */
+  }
+
+  .logo{
+    border-radius: 10px; /* Rounds the corners of the image */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
