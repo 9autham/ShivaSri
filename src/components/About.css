@@ -1,0 +1,56 @@
+.about-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .about-image {
+    flex: 1;
+    padding: 10px;
+    max-width: 50%; /* Image takes up half of the container’s width */
+  }
+  
+  .about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Optional: Adds rounded corners to the image */
+    object-fit: cover;  /* Ensures the image covers its container without distortion */
+  }
+  
+  .about-description {
+    flex: 1;
+    padding: 10px;
+    max-width: 50%; /* Description takes up the other half */
+  }
+  
+  .about-description h2 {
+    margin-top: 0;
+    font-size: 2rem;
+  }
+  
+  .about-description p {
+    margin: 10px 0;
+    line-height: 1.6;
+  }
+  
+  @media screen and (max-width: 1024px) {
+    .about-container {
+      flex-direction: column;
+    }
+  
+    .about-image,
+    .about-description {
+      max-width: 100%; /* Reset width to 100% for smaller screens */
+    }
+  
+    .about-description {
+      text-align: center; /* Optional: Center-align text on smaller screens */
+    }
+  
+    .about-description h2 {
+      font-size: 1.5rem; /* Adjust heading size for smaller screens */
+    }
+  }
+  
