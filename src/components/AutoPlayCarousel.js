@@ -1,40 +1,20 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import './AutoPlayCarousel.css'
 
-const items = [
-  {
-    image: "https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1549396535-c11d5c55b9df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1550133730-695473e544be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1549396535-c11d5c55b9df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1550133730-695473e544be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1549396535-c11d5c55b9df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1550133730-695473e544be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-  },
-  // Add more items here...
-];
+const importAll = (r) => {
+  return r.keys().map(r);
+};
+
+const images = importAll(require.context('./resources/carousel', false, /\.(png|jpe?g|svg)$/));
+
+const items = images.map((image) => {
+  return {
+    image: image,
+  };
+});
+
 
 const responsive = {
   desktop: {
@@ -56,7 +36,7 @@ const responsive = {
 
 const WithStyles = ({ image, headline}) => (
   <div>
-    <img src={image} alt={headline} style={{ width: "100%", height: "auto" }} />
+    <img className="carousel-image" src={image} alt={headline} />
   </div>
 );
 

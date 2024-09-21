@@ -1,5 +1,5 @@
 import React from 'react'
-import Couple from './resources/coupletower.jpg'
+import Couple from './resources/shivasri/boat.JPG'
 import './ContactUs.css'
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube, FaEnvelope } from 'react-icons/fa';
 import { MDBInput, MDBValidation, MDBValidationItem, MDBTextArea } from 'mdb-react-ui-kit';

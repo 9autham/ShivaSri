@@ -1,0 +1,20 @@
+.carousel-image {
+    width: 100%;         /* Always take the full width of the container */
+    height: 250px;       /* Default height for larger screens */
+    object-fit: cover;   /* Ensures image fills the container without distortion */
+  }
+  
+  /* Tablet - For screens between 464px and 1024px wide */
+  @media (max-width: 1024px) {
+    .carousel-image {
+      height: 200px;     /* Adjust height for tablet screens */
+    }
+  }
+  
+  /* Mobile - For screens 464px and smaller */
+  @media (max-width: 464px) {
+    .carousel-image {
+      height: 150px;     /* Adjust height for mobile screens */
+    }
+  }
+  
