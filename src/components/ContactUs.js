@@ -1,5 +1,5 @@
 import React from 'react'
-import Couple from './resources/shivasri/boat.JPG'
+import Boat from './resources/shivasri/boat.JPG'
 import './ContactUs.css'
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube, FaEnvelope } from 'react-icons/fa';
 import { MDBInput, MDBValidation, MDBValidationItem, MDBTextArea } from 'mdb-react-ui-kit';
@@ -9,7 +9,7 @@ const ContactUs = () => {
   return (
     <>
     <div className='image-container'>
-      <img className='image-class' src={Couple} alt='CoupleTower'/>
+      <img className='image-class' src={Boat} alt='CoupleTower'/>
       <div className='overlay-text container'>
       <p className='display-3' >Contact Us</p>
       <h5>Your story, our lens—get in touch for exceptional photography</h5>

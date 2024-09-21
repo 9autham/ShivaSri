@@ -48,7 +48,7 @@ function AutoPlayCarousel() {
       autoPlay
       autoPlaySpeed={2000}
       centerMode={false}
-      className=""
+      className="mt-4"
       containerClass="container-with-dots"
       dotListClass=""
       draggable
