@@ -1,0 +1,42 @@
+/* For large screens (min-width: 1200px), display 3 images with 330px width */
+@media (min-width: 1200px) {
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+      gap: 20px;
+    }
+  
+    .product-image {
+      width: 330px;
+      height: 330px;
+    }
+  }
+  
+  /* For medium screens (min-width: 601px to max-width: 1199px), display 2 images with 280px width */
+  @media (min-width: 601px) and (max-width: 1199px) {
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+      gap: 20px;
+    }
+  
+    .product-image {
+      width: 280px;
+      height: 280px;
+    }
+  }
+  
+  /* For small screens (max-width: 600px), display 1 image per row with full width */
+  @media (max-width: 600px) {
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr; /* 1 column */
+      gap: 10px;
+    }
+  
+    .product-image {
+      width: 100%; /* Full width for small screens */
+      height: auto; /* Auto adjust height */
+    }
+  }
+  
