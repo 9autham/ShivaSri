@@ -23,7 +23,7 @@ const Gallery = () => {
       <MasonryPhotoAlbum photos={photos}
       columns={(containerWidth) => {
         if (containerWidth < 300) return 1;
-        if (containerWidth < 400) return 2;
+        if (containerWidth < 500) return 2;
         if (containerWidth < 800) return 3;
         return 4;
       }}/>
