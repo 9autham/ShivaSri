@@ -1,4 +1,5 @@
 import Home from "./components/Home";
+import Portfolio from './components/Portfolio'
 import ContactUs from "./components/ContactUs";
 import About from "./components/About";
 import Gallery from "./components/Gallery";
@@ -21,6 +22,7 @@ function App() {
         <Route path="/pravalika" element ={<Pravalika/>}/>
         <Route path="/smruthika" element ={<Smruthika/>}/>
         <Route path="/prewedding" element ={<PreWedding/>}/>
+        <Route path="/portfolio" element ={<Portfolio/>}/>
         <Route path="/home" element ={<Home/>}/> 
       </Routes>
       <FooterBar/>
