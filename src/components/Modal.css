@@ -1,0 +1,63 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    background: white;
+    padding: 20px; /* Padding around the content */
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .modal-close {
+    position: fixed; /* Change to fixed positioning */
+    top: 20px; /* Space from the top of the screen */
+    right: 20px; /* Space from the right of the screen */
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #fff; /* Set close button color to white */
+    cursor: pointer;
+    transition: color 0.2s;
+    z-index: 1001; /* Ensure the close button is above other elements */
+  }
+  
+  .modal-close:hover {
+    color: #ff6666; /* Light red color on hover */
+  }
+  
+  .modal-image {
+    max-width: 100%;
+    max-height: 80vh; /* Allow enough space for the image */
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Media Query for smaller screens */
+  @media (max-width: 600px) {
+    .modal-close {
+      top: 15px; /* Adjusted for smaller screens */
+      right: 15px; /* Adjusted for smaller screens */
+    }
+  
+    .modal-content {
+      padding: 10px; /* Less padding on smaller screens */
+    }
+  
+    .modal-image {
+      max-height: calc(70vh - 40px); /* Allow more height for the image without overlapping */
+    }
+  }
+  

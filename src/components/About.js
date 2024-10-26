@@ -3,7 +3,6 @@ import "./About.css";
 import Profile from "../components/resources/shivasri/instagram-profile.jpg";
 import AboutFooter from '../components/resources/AboutFooter.jpeg';
 import { useNavigate } from 'react-router-dom';
-import { HR } from "flowbite-react";
 
   const About = () => {
     const navigate = useNavigate();
