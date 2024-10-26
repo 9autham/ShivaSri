@@ -1,5 +1,6 @@
-import React from "react";
-import './Portfolio.css'
+import React, { useState } from "react";
+import './Portfolio.css';
+import Modal from './Modal'; // Import the Modal component
 
 // Dynamically import images from the folder
 function importAll(r) {
@@ -10,16 +11,37 @@ function importAll(r) {
 const images = importAll(require.context('../components/resources/gallery', false, /\.(png|jpe?g|svg)$/));
 
 function Portfolio() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentImage, setCurrentImage] = useState(null);
+
+  const openModal = (image) => {
+    setCurrentImage(image);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setCurrentImage(null);
+  };
+
   return (
     <>
-    <p className="display-4 text-center">A FEW OF OUR FAVORITES</p>
-    <div className="portfolio-grid">
-      {images.map((image, index) => (
-        <div key={index} className="portfolio-item">
-          <img src={image} alt={`Portfolio image ${index + 1}`} className="portfolio-image" />
-        </div>
-      ))}
-    </div>
+      <p className="display-4 text-center">A FEW OF OUR FAVORITES</p>
+      <div className="portfolio-grid">
+        {images.map((image, index) => (
+          <div key={index} className="portfolio-item" onClick={() => openModal(image)}>
+            <img src={image} alt={`Portfolio image ${index + 1}`} className="portfolio-image" />
+          </div>
+        ))}
+      </div>
+      
+      {/* Modal to display the currently selected image */}
+      <Modal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        imageSrc={currentImage}
+        altText={`Portfolio image`}
+      />
     </>
   );
 }
