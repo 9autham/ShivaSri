@@ -53,4 +53,50 @@
       font-size: 1.5rem; /* Adjust heading size for smaller screens */
     }
   }
+
+  .about-footer-container {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+  }
+  
+  .about-footer-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .about-footer-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .about-footer-button:hover {
+    background-color: white;
+    color: black;
+  }
+
+  .divider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .line-divider {
+    width: 80%;
+    border: none;
+    border-top: 2px solid #ccc; /* Change color and thickness as needed */
+    margin: 0;
+  }
   
