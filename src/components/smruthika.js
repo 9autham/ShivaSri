@@ -1,55 +1,64 @@
-import React, { useState } from "react";
-import { MasonryPhotoAlbum } from "react-photo-album";
-import Modal from "./Modal";
-import "react-photo-album/masonry.css";
+import React, { useEffect, useState } from 'react';
+import { Gallery, Item } from 'react-photoswipe-gallery';
+import 'photoswipe/style.css';
+import './GallerySlideShow.css';
 
+// Dynamically import images from a folder
 const importAll = (r) => r.keys().map(r);
 const images = importAll(require.context('../components/resources/smruthika', false, /\.(png|jpe?g|svg)$/));
-const photos = images.map((image, index) => ({
-  src: image,
-  width: 1080,
-  height: 1080,
-  alt: `Image ${index + 1}`
-}));
 
-const Gallery = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null);
+const MyGallery = () => {
+  const [imageDimensions, setImageDimensions] = useState([]);
 
-  const openModal = (photo) => {
-    if (photo) {
-      setSelectedImage(photo);
-      setIsModalOpen(true);
-    }
-  };
+  useEffect(() => {
+    const loadImages = async () => {
+      const dimensions = await Promise.all(
+        images.map((image) => {
+          return new Promise((resolve) => {
+            const img = new Image();
+            img.src = image;
+            img.onload = () => {
+              resolve({ width: img.naturalWidth, height: img.naturalHeight });
+            };
+          });
+        })
+      );
+      setImageDimensions(dimensions);
+    };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedImage(null);
-  };
+    loadImages();
+  }, []);
 
   return (
     <div className="gallery-container">
-    <p className="display-3 text-center">Smruthika's Birthday</p>
-    <MasonryPhotoAlbum
-        photos={photos}
-        onClick={({ photo }) => openModal(photo)}
-        columns={(containerWidth) => {
-          if (containerWidth < 300) return 1;
-          if (containerWidth < 500) return 2;
-          if (containerWidth < 800) return 3;
-          return 4;
-        }}
-      />
-      
-      <Modal
-        isOpen={isModalOpen}
-        onClose={closeModal}
-        imageSrc={selectedImage?.src}
-        altText={selectedImage?.alt}
-      />
+      <p className="display-3 text-center">Smruthika Birthday</p>
+      <Gallery>
+        <div className="grid-layout">
+          {images.map((image, index) => (
+            <Item
+              key={index}
+              original={image}
+              thumbnail={image}
+              width={imageDimensions[index]?.width || 1875}  // Use dynamic width or fallback
+              height={imageDimensions[index]?.height || 2500} // Use dynamic height or fallback
+            >
+              {({ ref, open }) => (
+                <div className="image-wrapper">
+                  <img
+                    ref={ref}
+                    onClick={open}
+                    src={image}
+                    alt={`Photo ${index + 1}`}
+                    className="grid-image"
+                  />
+                </div>
+              )}
+            </Item>
+          ))}
+        </div>
+      </Gallery>
     </div>
   );
 };
 
-export default Gallery;
+export default MyGallery;

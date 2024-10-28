@@ -5,7 +5,7 @@ import './GallerySlideShow.css';
 
 // Dynamically import images from a folder
 const importAll = (r) => r.keys().map(r);
-const images = importAll(require.context('../components/resources/prewed', false, /\.(png|jpe?g|svg)$/));
+const images = importAll(require.context('../components/resources/smruthika', false, /\.(png|jpe?g|svg)$/));
 
 const MyGallery = () => {
   const [imageDimensions, setImageDimensions] = useState([]);
@@ -31,7 +31,7 @@ const MyGallery = () => {
 
   return (
     <div className="gallery-container">
-      <p className="display-3 text-center">Pre-Wedding</p>
+      <p className="display-3 text-center">Pravalika PhotoShoot</p>
       <Gallery>
         <div className="grid-layout">
           {images.map((image, index) => (

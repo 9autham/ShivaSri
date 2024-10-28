@@ -1,0 +1,59 @@
+.gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .display-3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .grid-layout {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  
+  .image-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* This creates a square aspect ratio */
+    overflow: hidden; /* Ensure overflow is hidden */
+  }
+  
+  .grid-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures aspect ratio is maintained while filling the height */
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .grid-image:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Responsive column settings */
+  @media (min-width: 800px) {
+    .grid-layout {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  @media (min-width: 500px) and (max-width: 799px) {
+    .grid-layout {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (max-width: 499px) {
+    .grid-layout {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
